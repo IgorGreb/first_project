@@ -114,7 +114,7 @@ void calculator() {
   double? num2;
 
   while (num1 == null) {
-    stdout.write('Перше число: ');
+    stdout.write('ВВедіть перше число: ');
     num1 = double.tryParse(stdin.readLineSync() ?? '');
     if (num1 == null) {
       print('Помилка: введи число.');
@@ -122,7 +122,7 @@ void calculator() {
   }
 
   while (num2 == null) {
-    stdout.write('Друге число: ');
+    stdout.write('Введіть друге число: ');
     num2 = double.tryParse(stdin.readLineSync() ?? '');
     if (num2 == null) {
       print('Помилка: введи число.');
@@ -134,19 +134,19 @@ void calculator() {
 
   switch (op) {
     case '+':
-      print('Відповідь: ${num1 + num2}');
+      print('Відповідь: $num1 + $num2 = ${num1 + num2}');
       break;
     case '-':
-      print('Відповідь: ${num1 - num2}');
+      print('Відповідь: $num1 - $num2 = ${num1 - num2}');
       break;
     case '*':
-      print('Відповідь: ${num1 * num2}');
+      print('Відповідь: $num1 * $num2 = ${num1 * num2}');
       break;
     case '/':
       if (num2 == 0) {
         print('Не можна ділити на нуль!');
       } else {
-        print('Відповідь: ${num1 / num2}');
+        print('Відповідь: $num1 / $num2 = ${num1 / num2}');
       }
       break;
     default:
