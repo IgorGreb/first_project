@@ -1,155 +1,157 @@
 import 'dart:io';
 import 'dart:math';
 
-void main() {
-  calculator();
-}
+void main() {}
 
-void someFunction() {
-  stdout.write('Введи свій бал: ');
-  String? input = stdin.readLineSync();
-  int? score = int.tryParse(input ?? '');
-  if (score == null) {
-    print('Потрібно ввести ціле число!');
-    return;
-  }
-
-  if (score >= 90) {
-    print('A');
-  } else if (score >= 80 && score <= 89) {
-    print('B');
-  } else if (score >= 70 && score <= 79) {
-    print('C');
-  } else if (score >= 60 && score <= 69) {
-    print('D');
-  } else {
-    print('F');
-  }
-}
-
-void guessTheNumber() {
-  var rng = Random();
-  int numberToGuess = rng.nextInt(100) + 1;
-  int? guess;
-
-  print('Я загадав число від 0 до 100. Спробуй його відгадати!');
-
-  while (guess != numberToGuess) {
-    stdout.write('Введи число: ');
-    guess = int.tryParse(stdin.readLineSync() ?? '');
-
-    if (guess == null) {
-      print('Помилка: введи правильне число.');
-      continue;
-    }
-
-    if (guess < 0 || guess > 100) {
-      print('Число має бути від 0 до 100. Спробуй ще раз.');
-      continue;
-    }
-
-    if (guess < numberToGuess) {
-      print('Замало! Спробуй більше.');
-    } else if (guess > numberToGuess) {
-      print('Забагато! Спробуй менше.');
-    } else {
-      print('Вітаю! Ти вгадав');
-    }
-  }
-}
-
-void factorialOfANumber() {
-  stdout.write('Введи число: ');
-  int? n = int.tryParse(stdin.readLineSync() ?? '');
-
-  if (n == null || n < 0) {
-    print('Введи невід’ємне ціле число.');
-    return;
-  }
-
-  int result = 1;
-  int i = 1;
-
-  while (i <= n) {
-    result *= i;
-    i++;
-  }
-
-  print('Факторіал числа $n є $result');
-}
-
-void temperatureConverter() {
-  double celsiusToFahrenheit(double celsius) {
-    return celsius * 9 / 5 + 32;
-  }
-
-  double fahrenheitToCelsius(double fahrenheit) {
-    return (fahrenheit - 32) * 5 / 9;
-  }
-
-  stdout.write('Введи температуру: ');
-  double? temp = double.tryParse(stdin.readLineSync() ?? '');
-
-  if (temp == null) {
-    print('Помилка: введи правильне число.');
-    return;
-  }
-
-  stdout.write('Введи систему конвертації (C для Цельсія, F для Фаренгейта): ');
-  String? system = stdin.readLineSync()?.toUpperCase();
-
-  if (system == 'F') {
-    double converted = celsiusToFahrenheit(temp);
-    print('$temp°C = ${converted.toStringAsFixed(2)}°F');
-  } else if (system == 'C') {
-    double converted = fahrenheitToCelsius(temp);
-    print('$temp°F = ${converted.toStringAsFixed(2)}°C');
-  } else {
-    print('Невірна система. Введи C або F.');
-  }
-}
-
+/// ==========================
+/// 🔸 1. Калькулятор
+/// ==========================
 void calculator() {
-  double? num1;
-  double? num2;
+  print('\n=== 🧮 Калькулятор ===');
 
-  while (num1 == null) {
-    stdout.write('ВВедіть перше число: ');
-    num1 = double.tryParse(stdin.readLineSync() ?? '');
-    if (num1 == null) {
-      print('Помилка: введи число.');
-    }
-  }
-
-  while (num2 == null) {
-    stdout.write('Введіть друге число: ');
-    num2 = double.tryParse(stdin.readLineSync() ?? '');
-    if (num2 == null) {
-      print('Помилка: введи число.');
-    }
-  }
+  double num1 = _readDouble('Введіть перше число: ');
+  double num2 = _readDouble('Введіть друге число: ');
 
   stdout.write('Вибери оператор (+, -, *, /): ');
   String? op = stdin.readLineSync();
 
+  double? result;
+
   switch (op) {
     case '+':
-      print('Відповідь: $num1 + $num2 = ${num1 + num2}');
+      result = num1 + num2;
       break;
     case '-':
-      print('Відповідь: $num1 - $num2 = ${num1 - num2}');
+      result = num1 - num2;
       break;
     case '*':
-      print('Відповідь: $num1 * $num2 = ${num1 * num2}');
+      result = num1 * num2;
       break;
     case '/':
       if (num2 == 0) {
-        print('Не можна ділити на нуль!');
-      } else {
-        print('Відповідь: $num1 / $num2 = ${num1 / num2}');
+        print('⚠️ Не можна ділити на нуль!');
+        return;
       }
+      result = num1 / num2;
       break;
     default:
-      print('Невірний оператор!');
+      print('❌ Невірний оператор!');
+      return;
   }
+
+  print('✅ Результат: $num1 $op $num2 = ${result.toStringAsFixed(2)}');
+}
+
+/// ==========================
+/// 🔸 2. Гра "Вгадай число"
+/// ==========================
+void guessTheNumber() {
+  print('\n🎯 Гра: Вгадай число від 1 до 100');
+  var rng = Random();
+  int numberToGuess = rng.nextInt(100) + 1;
+  int? guess;
+
+  while (guess != numberToGuess) {
+    guess = _readInt('Введи число: ');
+
+    if (guess < numberToGuess) {
+      print('🔽 Замало! Спробуй більше.');
+    } else if (guess > numberToGuess) {
+      print('🔼 Забагато! Спробуй менше.');
+    } else {
+      print('🎉 Вітаю! Ти вгадав число $numberToGuess');
+    }
+  }
+}
+
+/// ==========================
+/// 🔸 3. Факторіал числа
+/// ==========================
+void factorialOfANumber() {
+  print('\n📈 Обчислення факторіалу');
+  int n = _readInt('Введи ціле невід’ємне число: ');
+
+  if (n < 0) {
+    print('❌ Введи невід’ємне число.');
+    return;
+  }
+
+  int result = 1;
+  for (int i = 1; i <= n; i++) {
+    result *= i;
+  }
+
+  print('✅ Факторіал числа $n = $result');
+}
+
+/// ==========================
+/// 🔸 4. Конвертер температури
+/// ==========================
+void temperatureConverter() {
+  print('\n🌡️ Конвертер температури');
+
+  double temp = _readDouble('Введи температуру: ');
+  stdout.write('Введи систему (C — Цельсій, F — Фаренгейт): ');
+  String? system = stdin.readLineSync()?.toUpperCase();
+
+  if (system == 'C') {
+    double converted = temp * 9 / 5 + 32;
+    print('✅ $temp°C = ${converted.toStringAsFixed(2)}°F');
+  } else if (system == 'F') {
+    double converted = (temp - 32) * 5 / 9;
+    print('✅ $temp°F = ${converted.toStringAsFixed(2)}°C');
+  } else {
+    print('❌ Невірна система. Введи C або F.');
+  }
+}
+
+/// ==========================
+/// 🔸 5. Оцінка за балами
+/// ==========================
+void gradeEvaluator() {
+  print('\n🎓 Оцінка за балами');
+
+  int score = _readInt('Введи свій бал (0–100): ');
+
+  if (score >= 90) {
+    print('Оцінка: A');
+  } else if (score >= 80) {
+    print('Оцінка: B');
+  } else if (score >= 70) {
+    print('Оцінка: C');
+  } else if (score >= 60) {
+    print('Оцінка: D');
+  } else {
+    print('Оцінка: F');
+  }
+}
+
+/// ==========================
+/// 🔸 Допоміжні функції
+/// ==========================
+
+// Зчитує ціле число з консолі
+int _readInt(String message) {
+  int? value;
+  while (value == null) {
+    stdout.write(message);
+    value = int.tryParse(stdin.readLineSync() ?? '');
+    if (value == null) {
+      print('❌ Помилка: введи ціле число!');
+    }
+  }
+  return value;
+}
+
+// Зчитує число з плаваючою точкою
+double _readDouble(String message) {
+  double? value;
+  while (value == null) {
+    stdout.write(message);
+    value = double.tryParse(stdin.readLineSync() ?? '');
+    if (value == null) {
+      print('❌ Помилка: введи число!');
+    }
+  }
+  return value;
 }
