@@ -69,10 +69,17 @@ mixin Swimming {
 
 class Fish extends Animal with Swimming {
   Fish(super.species, super.age);
+
+  void prinFishtInfo() {
+    print('I’m a fish and ${swim()}');
+  }
 }
 
 class Duck extends Animal with Swimming {
   Duck(super.species, super.age);
+  void prinDuckInfo() {
+    print('I’m a duck and ${swim()}');
+  }
 }
 
 // 4
