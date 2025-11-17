@@ -1,4 +1,4 @@
 class HomePageText {
-  static const String homeWorkOne = '';
-  static const String homePageTitleText = 'Web Academy';
+  static const String homeWorkOne = 'Beautiful Images';
+  static const String homePageTitleText = 'My Homework';
 }
