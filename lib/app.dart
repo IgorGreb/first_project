@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_grebenyuk/constants/colors.dart';
-import 'package:flutter_application_grebenyuk/constants/main_page_text.dart';
 import 'package:flutter_application_grebenyuk/home_page/home_page.dart';
+import 'package:flutter_application_grebenyuk/screens/contacts_screen.dart';
+import 'package:flutter_application_grebenyuk/screens/profile_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -15,7 +16,12 @@ class MyApp extends StatelessWidget {
           seedColor: MainPageColors.backgroundLight,
         ),
       ),
-      home: MyHomePage(title: HomePageText.homePageTitleText),
+      initialRoute: HomeScreen.routeName,
+      routes: {
+        HomeScreen.routeName: (context) => const HomeScreen(),
+        ProfileScreen.routeName: (context) => const ProfileScreen(),
+        ContactsScreen.routeName: (context) => const ContactsScreen(),
+      },
     );
   }
 }
