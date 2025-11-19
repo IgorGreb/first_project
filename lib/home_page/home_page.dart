@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_grebenyuk/constants/main_page_text.dart';
 import 'package:flutter_application_grebenyuk/homeworks/five/homework_five_screen.dart';
-import 'package:flutter_application_grebenyuk/screens/profile_screen.dart';
+import 'package:flutter_application_grebenyuk/homeworks/six/profile_screen.dart';
+import 'package:flutter_application_grebenyuk/homeworks/seven/homework_seven_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -21,10 +22,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             const Text(
               HomePageText.welcomeText,
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),
@@ -40,6 +38,13 @@ class HomeScreen extends StatelessWidget {
                 Navigator.pushNamed(context, HomeworkFiveScreen.routeName);
               },
               child: const Text(HomePageText.goToHomeworkFiveButton),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, HomeworkSevenScreen.routeName);
+              },
+              child: const Text(HomePageText.goToHomeworkSevenButton),
             ),
           ],
         ),
