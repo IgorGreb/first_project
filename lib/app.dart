@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_grebenyuk/constants/colors.dart';
 import 'package:flutter_application_grebenyuk/home_page/home_page.dart';
+import 'package:flutter_application_grebenyuk/homeworks/eight/homework_eight_screen.dart';
 import 'package:flutter_application_grebenyuk/homeworks/five/homework_five_screen.dart';
 import 'package:flutter_application_grebenyuk/homeworks/six/contacts_screen.dart';
 import 'package:flutter_application_grebenyuk/homeworks/six/profile_screen.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         ContactsScreen.routeName: (context) => const ContactsScreen(),
         HomeworkFiveScreen.routeName: (context) => const HomeworkFiveScreen(),
         HomeworkSevenScreen.routeName: (context) => const HomeworkSevenScreen(),
+        HomeworkEightScreen.routeName: (context) => const HomeworkEightScreen(),
       },
     );
   }

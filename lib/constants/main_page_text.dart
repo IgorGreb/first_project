@@ -4,6 +4,7 @@ class HomePageText {
   static const String goToProfileButton = 'Перейти до профілю';
   static const String goToHomeworkFiveButton = 'Домашка #5';
   static const String goToHomeworkSevenButton = 'Домашка #7';
+  static const String goToHomeworkEightButton = 'Домашка #8';
 
   static const String profileScreenTitle = 'Профіль';
   static const String profileName = 'Ігор Гребенюк';
