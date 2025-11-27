@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
+import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
 import 'package:flutter_application_grebenyuk/homeworks/seven/widgets/statistics_widget_builder.dart';
 
 class UserStatusWidget extends StatelessWidget {
@@ -20,15 +22,17 @@ class UserStatusWidget extends StatelessWidget {
         final bool isWide = constraints.maxWidth >= 400;
         final double valueFontSize = isWide ? 28 : 22;
         final double labelFontSize = isWide ? 16 : 14;
-        final double spacing = isWide ? 32 : 16;
+        final double spacing =
+            isWide ? AppDimensions.gap32 : AppDimensions.gap16;
 
         return Container(
           padding: EdgeInsets.symmetric(
-            horizontal: isWide ? 32 : 16,
-            vertical: isWide ? 20 : 16,
+            horizontal: isWide ? AppDimensions.gap32 : AppDimensions.gap16,
+            vertical: isWide ? AppDimensions.gap20 : AppDimensions.gap16,
           ),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius:
+                BorderRadius.circular(AppDimensions.borderRadiusLarge),
             color: Theme.of(context).colorScheme.surfaceContainerHighest,
           ),
           child: Row(
@@ -36,7 +40,7 @@ class UserStatusWidget extends StatelessWidget {
             children: [
               Expanded(
                 child: buildStatistic(
-                  'Projects',
+                  UserStatusTexts.projects,
                   projects,
                   valueFontSize,
                   labelFontSize,
@@ -45,7 +49,7 @@ class UserStatusWidget extends StatelessWidget {
               SizedBox(width: spacing),
               Expanded(
                 child: buildStatistic(
-                  'Followers',
+                  UserStatusTexts.followers,
                   followers,
                   valueFontSize,
                   labelFontSize,
@@ -54,7 +58,7 @@ class UserStatusWidget extends StatelessWidget {
               SizedBox(width: spacing),
               Expanded(
                 child: buildStatistic(
-                  'Following',
+                  UserStatusTexts.following,
                   following,
                   valueFontSize,
                   labelFontSize,

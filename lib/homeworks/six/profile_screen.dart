@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_grebenyuk/constants/main_page_text.dart';
+import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
+import 'package:flutter_application_grebenyuk/constants/text_styles.dart';
+import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
 import 'package:flutter_application_grebenyuk/homeworks/six/contacts_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -11,11 +13,11 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(HomePageText.profileScreenTitle),
+        title: const Text(ProfileScreenTexts.appBarTitle),
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(AppDimensions.paddingDefault),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -23,49 +25,48 @@ class ProfileScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  width: 100,
-                  height: 100,
+                  width: AppDimensions.avatarSize,
+                  height: AppDimensions.avatarSize,
                   decoration: BoxDecoration(
                     color: Theme.of(context).colorScheme.primaryContainer,
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius:
+                        BorderRadius.circular(AppDimensions.borderRadiusMedium),
                   ),
                   alignment: Alignment.center,
                   child: const Text(
-                    'IG',
-                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                    ProfileScreenTexts.initials,
+                    style: AppTextStyles.profileInitials,
                   ),
                 ),
-                const SizedBox(width: 16),
+                const SizedBox(width: AppDimensions.gap16),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(
-                        HomePageText.profileName,
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        ProfileScreenTexts.name,
+                        style: AppTextStyles.profileName,
                       ),
-                      SizedBox(height: 8),
-                      Text(HomePageText.profileAge),
-                      SizedBox(height: 8),
-                      Text(HomePageText.profileJob),
+                      SizedBox(height: AppDimensions.gap8),
+                      Text(ProfileScreenTexts.age),
+                      SizedBox(height: AppDimensions.gap8),
+                      Text(ProfileScreenTexts.job),
                     ],
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 32),
+            const SizedBox(height: AppDimensions.gap32),
             Container(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.all(AppDimensions.cardPadding),
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.surfaceContainerHighest,
-                borderRadius: BorderRadius.circular(12),
+                borderRadius:
+                    BorderRadius.circular(AppDimensions.borderRadiusMedium),
               ),
               child: const Text(
-                'Люблю навчатися Flutter та створювати красиві додатки.',
-                style: TextStyle(fontSize: 16),
+                ProfileScreenTexts.about,
+                style: AppTextStyles.profileInfo,
               ),
             ),
             const Spacer(),
@@ -73,14 +74,14 @@ class ProfileScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, ContactsScreen.routeName);
               },
-              child: const Text(HomePageText.contactsButton),
+              child: const Text(ProfileScreenTexts.contactsButton),
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: AppDimensions.gap12),
             TextButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: const Text(HomePageText.backButton),
+              child: const Text(ProfileScreenTexts.backButton),
             ),
           ],
         ),

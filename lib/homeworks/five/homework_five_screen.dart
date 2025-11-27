@@ -1,48 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_grebenyuk/constants/colors.dart';
+import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
+import 'package:flutter_application_grebenyuk/constants/text_styles.dart';
+import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
 
 class HomeworkFiveScreen extends StatelessWidget {
   const HomeworkFiveScreen({super.key});
 
   static const routeName = '/homework-five';
 
-  static const _firstImageUrl =
-      'https://fastly.picsum.photos/id/179/2048/1365.jpg?hmac=GJyDjrvfBfjPfJPqSBd2pX6sjvsGbG10d21blr5bTS8';
-  static const _secondImageUrl =
-      'https://fastly.picsum.photos/id/200/1920/1280.jpg?hmac=-eKjMC8-UrbLMpy1A4OWrK0feVPB3Ka5KNOGibQzpRU';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My Homework'),
+        title: const Text(HomeworkFiveTexts.appBarTitle),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(AppDimensions.paddingDefault),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Beautiful Images',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+              HomeworkFiveTexts.sectionTitle,
+              style: AppTextStyles.homeworkFiveTitle,
             ),
-            const SizedBox(height: 20),
-            buildWidget(_firstImageUrl),
-            const SizedBox(height: 20),
-            buildWidget(_secondImageUrl),
-            const SizedBox(height: 20),
+            const SizedBox(height: AppDimensions.gap20),
+            buildWidget(HomeworkFiveTexts.firstImageUrl),
+            const SizedBox(height: AppDimensions.gap20),
+            buildWidget(HomeworkFiveTexts.secondImageUrl),
+            const SizedBox(height: AppDimensions.gap20),
             _buildAssetWidget(),
-            const SizedBox(height: 20),
+            const SizedBox(height: AppDimensions.gap20),
             const Text(
-              'My text',
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.red,
-                fontStyle: FontStyle.italic,
-              ),
+              HomeworkFiveTexts.highlightText,
+              style: AppTextStyles.homeworkFiveNote,
             ),
           ],
         ),
@@ -52,15 +44,15 @@ class HomeworkFiveScreen extends StatelessWidget {
 
   Widget buildWidget(String imageUrl) {
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(AppDimensions.imagePadding),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey),
-        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: AppColors.borderGrey),
+        borderRadius: BorderRadius.circular(AppDimensions.borderRadiusSmall),
       ),
       child: Image.network(
         imageUrl,
-        height: 200,
-        width: 200,
+        height: AppDimensions.squareImage,
+        width: AppDimensions.squareImage,
         fit: BoxFit.cover,
       ),
     );
@@ -68,24 +60,24 @@ class HomeworkFiveScreen extends StatelessWidget {
 
   Widget _buildAssetWidget() {
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(AppDimensions.imagePadding),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey),
-        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: AppColors.borderGrey),
+        borderRadius: BorderRadius.circular(AppDimensions.borderRadiusSmall),
         boxShadow: const [
           BoxShadow(
-            color: Colors.black12,
-            blurRadius: 6,
-            offset: Offset(0, 3),
+            color: AppColors.black12,
+            blurRadius: AppDimensions.blurRadiusSmall,
+            offset: Offset(0, AppDimensions.shadowOffsetY),
           ),
         ],
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(AppDimensions.borderRadiusSmall),
         child: Image.asset(
-          'assets/images/animal.jpg',
-          height: 200,
-          width: 200,
+          HomeworkFiveTexts.assetImagePath,
+          height: AppDimensions.squareImage,
+          width: AppDimensions.squareImage,
           fit: BoxFit.cover,
         ),
       ),

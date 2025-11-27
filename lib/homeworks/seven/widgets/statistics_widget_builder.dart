@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
+import 'package:flutter_application_grebenyuk/constants/text_styles.dart';
 
 Widget buildStatistic(
   String label,
@@ -12,12 +14,12 @@ Widget buildStatistic(
     children: [
       Text(
         value.toString(),
-        style: TextStyle(fontSize: valueFontSize, fontWeight: FontWeight.bold),
+        style: AppTextStyles.statisticsValue(valueFontSize),
       ),
-      const SizedBox(height: 6),
+      const SizedBox(height: AppDimensions.gap6),
       Text(
         label,
-        style: TextStyle(fontSize: labelFontSize, color: Colors.grey[700]),
+        style: AppTextStyles.statisticsLabel(labelFontSize),
       ),
     ],
   );

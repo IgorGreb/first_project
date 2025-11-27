@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
+import 'package:flutter_application_grebenyuk/constants/text_styles.dart';
+import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
 import 'package:flutter_application_grebenyuk/homeworks/eight/models/todo_task.dart';
 import 'package:flutter_application_grebenyuk/homeworks/eight/widgets/animated_task_tile.dart';
 import 'package:flutter_application_grebenyuk/homeworks/eight/widgets/empty_state.dart';
@@ -80,26 +83,29 @@ class _HomeworkEightScreenState extends State<HomeworkEightScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Homework #8: To-Do List'),
+        title: const Text(HomeworkEightTexts.appBarTitle),
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppDimensions.gap20,
+          vertical: AppDimensions.gap16,
+        ),
         child: Column(
           children: [
             Card(
               elevation: 2,
               child: Padding(
-                padding: const EdgeInsets.all(16),
+                padding:
+                    const EdgeInsets.all(AppDimensions.paddingDefault),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     const Text(
-                      'Нове завдання',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      HomeworkEightTexts.newTaskTitle,
+                      style: AppTextStyles.todoSectionTitle,
                     ),
-                    const SizedBox(height: 12),
+                    const SizedBox(height: AppDimensions.gap12),
                     Row(
                       children: [
                         Expanded(
@@ -108,15 +114,15 @@ class _HomeworkEightScreenState extends State<HomeworkEightScreen> {
                             onChanged: _handleTextChanged,
                             decoration: const InputDecoration(
                               border: OutlineInputBorder(),
-                              hintText: 'Опишіть, що потрібно зробити',
+                              hintText: HomeworkEightTexts.taskHint,
                             ),
                           ),
                         ),
-                        const SizedBox(width: 12),
+                        const SizedBox(width: AppDimensions.gap12),
                         FilledButton.icon(
                           onPressed: _canAddTask ? _addTask : null,
                           icon: const Icon(Icons.add_task),
-                          label: const Text('Додати'),
+                          label: const Text(HomeworkEightTexts.addButton),
                         ),
                       ],
                     ),
@@ -124,14 +130,15 @@ class _HomeworkEightScreenState extends State<HomeworkEightScreen> {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: AppDimensions.gap20),
             Expanded(
               child: Stack(
                 children: [
                   AnimatedList(
                     key: _listKey,
                     initialItemCount: _tasks.length,
-                    padding: const EdgeInsets.only(bottom: 12),
+                    padding:
+                        const EdgeInsets.only(bottom: AppDimensions.gap12),
                     itemBuilder: (context, index, animation) {
                       final TodoTask task = _tasks[index];
                       return AnimatedTaskTile(
