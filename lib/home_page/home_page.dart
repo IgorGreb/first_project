@@ -13,68 +13,81 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   static const routeName = '/';
+  static final List<_HomeButtonData> _buttons = [
+    const _HomeButtonData(
+      title: HomeScreenTexts.goToProfileButton,
+      routeName: ProfileScreen.routeName,
+    ),
+    const _HomeButtonData(
+      title: HomeScreenTexts.goToDartSolutionsButton,
+      routeName: DartSolutionsScreen.routeName,
+    ),
+    const _HomeButtonData(
+      title: HomeScreenTexts.goToHomeworkFiveButton,
+      routeName: HomeworkFiveScreen.routeName,
+    ),
+    const _HomeButtonData(
+      title: HomeScreenTexts.goToHomeworkSevenButton,
+      routeName: HomeworkSevenScreen.routeName,
+    ),
+    const _HomeButtonData(
+      title: HomeScreenTexts.goToHomeworkEightButton,
+      routeName: HomeworkEightScreen.routeName,
+    ),
+    const _HomeButtonData(
+      title: HomeScreenTexts.goToHomeworkNineButton,
+      routeName: HomeworkNineScreen.routeName,
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(HomeScreenTexts.appBarTitle),
+        title: const Text(
+          HomeScreenTexts.welcomeText,
+          style: AppTextStyles.homeWelcome,
+          textAlign: TextAlign.center,
+        ),
         centerTitle: true,
       ),
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Text(
-              HomeScreenTexts.welcomeText,
-              style: AppTextStyles.homeWelcome,
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: AppDimensions.gap20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, ProfileScreen.routeName);
-              },
-              child: const Text(HomeScreenTexts.goToProfileButton),
-            ),
-            const SizedBox(height: AppDimensions.gap20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, DartSolutionsScreen.routeName);
-              },
-              child: const Text(HomeScreenTexts.goToDartSolutionsButton),
-            ),
-            const SizedBox(height: AppDimensions.gap20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, HomeworkFiveScreen.routeName);
-              },
-              child: const Text(HomeScreenTexts.goToHomeworkFiveButton),
-            ),
-            const SizedBox(height: AppDimensions.gap20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, HomeworkSevenScreen.routeName);
-              },
-              child: const Text(HomeScreenTexts.goToHomeworkSevenButton),
-            ),
-            const SizedBox(height: AppDimensions.gap20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, HomeworkEightScreen.routeName);
-              },
-              child: const Text(HomeScreenTexts.goToHomeworkEightButton),
-            ),
-            const SizedBox(height: AppDimensions.gap20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, HomeworkNineScreen.routeName);
-              },
-              child: const Text(HomeScreenTexts.goToHomeworkNineButton),
-            ),
-          ],
+      body: Padding(
+        padding: const EdgeInsets.all(AppDimensions.gap20),
+        child: GridView.count(
+          crossAxisCount: 2,
+          mainAxisSpacing: AppDimensions.gap20,
+          crossAxisSpacing: AppDimensions.gap20,
+          children:
+              _buttons
+                  .map(
+                    (button) => ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                            AppDimensions.borderRadiusSmall,
+                          ),
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context, button.routeName);
+                      },
+                      child: Text(
+                        button.title,
+                        textAlign: TextAlign.center,
+                        style: AppTextStyles.homeButton,
+                      ),
+                    ),
+                  )
+                  .toList(),
         ),
       ),
     );
   }
+}
+
+class _HomeButtonData {
+  const _HomeButtonData({required this.title, required this.routeName});
+
+  final String title;
+  final String routeName;
 }

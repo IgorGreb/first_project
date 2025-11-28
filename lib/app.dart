@@ -9,17 +9,15 @@ import 'package:flutter_application_grebenyuk/homeworks/seven/homework_seven_scr
 import 'package:flutter_application_grebenyuk/homeworks/nine/screens/homework_nine_screen.dart';
 import 'package:flutter_application_grebenyuk/lessons_dart/screens/dart_solutions_screen.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class WebAccademyHomeWorkApp extends StatelessWidget {
+  const WebAccademyHomeWorkApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: AppColors.backgroundLight,
-        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.backgroundLight),
       ),
       initialRoute: HomeScreen.routeName,
       routes: {
@@ -30,8 +28,7 @@ class MyApp extends StatelessWidget {
         HomeworkSevenScreen.routeName: (context) => const HomeworkSevenScreen(),
         HomeworkEightScreen.routeName: (context) => const HomeworkEightScreen(),
         HomeworkNineScreen.routeName: (context) => const HomeworkNineScreen(),
-        DartSolutionsScreen.routeName: (context) =>
-            const DartSolutionsScreen(),
+        DartSolutionsScreen.routeName: (context) => const DartSolutionsScreen(),
       },
     );
   }

@@ -27,6 +27,8 @@ class AppTextStyles {
     color: AppColors.accentRed,
     fontStyle: FontStyle.italic,
   );
+  static const TextStyle homeButton =
+      TextStyle(fontSize: 16, fontWeight: FontWeight.w600);
 
   static TextStyle profileHeaderName(double fontSize) => TextStyle(
         fontSize: fontSize,
