@@ -8,6 +8,7 @@ class HomeScreenTexts {
   static const String goToHomeworkNineButton = 'Домашка #9';
   static const String goToDartSolutionsButton =
       'Задачі з Dart \n Домашки: #1, #2, #3';
+  static const String goToDartHomeworkTenButton = 'Домашка #10';
 }
 
 class ProfileScreenTexts {
@@ -71,6 +72,24 @@ class HomeworkNineTexts {
   static const String appBarTitle = 'Книга рецептів';
   static const String emptyListMessage =
       'Поки що немає рецептів. Додайте перший!';
+}
+
+class HomeworkTenTexts {
+  static const String appBarTitle = 'Async Chat Bot';
+  static const String defaultResponse = 'Ваше питання опрацьоване.';
+  static const String errorResponse =
+      'Щось пішло не так! Спробуйте ще раз.';
+  static const String positiveResponse = 'Я радий, що вам подобається!';
+  static const String emptyChatPlaceholder =
+      'Поставте перше питання, щоб розпочати чат.';
+  static const String typingLabel = 'Бот друкує';
+  static const String questionHint = 'Введіть питання...';
+  static const String sendButton = 'Надіслати';
+  static const String weatherResponseTemplate =
+      'Зараз приблизно {temp}°C.';
+
+  static String weatherResponse(int temperature) =>
+      weatherResponseTemplate.replaceFirst('{temp}', '$temperature');
 }
 
 class RecipeDetailsTexts {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
 import 'package:flutter_application_grebenyuk/constants/text_styles.dart';
 import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
+import 'package:flutter_application_grebenyuk/homeworks/%20ten/async_chat_bot/asycn_chat_bot.dart';
 import 'package:flutter_application_grebenyuk/homeworks/eight/homework_eight_screen.dart';
 import 'package:flutter_application_grebenyuk/homeworks/five/homework_five_screen.dart';
 import 'package:flutter_application_grebenyuk/homeworks/six/profile_screen.dart';
@@ -37,6 +38,10 @@ class HomeScreen extends StatelessWidget {
     const _HomeButtonData(
       title: HomeScreenTexts.goToHomeworkNineButton,
       routeName: HomeworkNineScreen.routeName,
+    ),
+    const _HomeButtonData(
+      title: HomeScreenTexts.goToDartHomeworkTenButton,
+      routeName: AsyncChatBot.routeName,
     ),
   ];
 

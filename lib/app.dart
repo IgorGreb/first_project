@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_grebenyuk/constants/colors.dart';
 import 'package:flutter_application_grebenyuk/home_page/home_page.dart';
+import 'package:flutter_application_grebenyuk/homeworks/%20ten/async_chat_bot/asycn_chat_bot.dart';
 import 'package:flutter_application_grebenyuk/homeworks/eight/homework_eight_screen.dart';
 import 'package:flutter_application_grebenyuk/homeworks/five/homework_five_screen.dart';
 import 'package:flutter_application_grebenyuk/homeworks/six/contacts_screen.dart';
@@ -9,8 +10,8 @@ import 'package:flutter_application_grebenyuk/homeworks/seven/homework_seven_scr
 import 'package:flutter_application_grebenyuk/homeworks/nine/screens/homework_nine_screen.dart';
 import 'package:flutter_application_grebenyuk/lessons_dart/screens/dart_solutions_screen.dart';
 
-class WebAccademyHomeWorkApp extends StatelessWidget {
-  const WebAccademyHomeWorkApp({super.key});
+class WebAcademyHomeWorkApp extends StatelessWidget {
+  const WebAcademyHomeWorkApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +30,7 @@ class WebAccademyHomeWorkApp extends StatelessWidget {
         HomeworkEightScreen.routeName: (context) => const HomeworkEightScreen(),
         HomeworkNineScreen.routeName: (context) => const HomeworkNineScreen(),
         DartSolutionsScreen.routeName: (context) => const DartSolutionsScreen(),
+        AsyncChatBot.routeName: (context) => const AsyncChatBot(),
       },
     );
   }
