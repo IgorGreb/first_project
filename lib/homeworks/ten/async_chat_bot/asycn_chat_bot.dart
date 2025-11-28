@@ -6,6 +6,7 @@ import 'package:flutter_application_grebenyuk/constants/colors.dart';
 import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
 import 'package:flutter_application_grebenyuk/constants/durations.dart';
 import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
+import 'package:flutter_application_grebenyuk/widgets/app_scaffold.dart';
 
 /// Екран, що демонструє роботу асинхронного чат-бота.
 class AsyncChatBot extends StatefulWidget {
@@ -123,8 +124,8 @@ class _AsyncChatBotState extends State<AsyncChatBot> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(HomeworkTenTexts.appBarTitle)),
+    return AppScaffold(
+      title: HomeworkTenTexts.appBarTitle,
       body: Padding(
         padding: const EdgeInsets.all(AppDimensions.gap16),
         child: Column(

@@ -5,6 +5,7 @@ import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
 import 'package:flutter_application_grebenyuk/homeworks/eight/models/todo_task.dart';
 import 'package:flutter_application_grebenyuk/homeworks/eight/widgets/animated_task_tile.dart';
 import 'package:flutter_application_grebenyuk/homeworks/eight/widgets/empty_state.dart';
+import 'package:flutter_application_grebenyuk/widgets/app_scaffold.dart';
 
 class HomeworkEightScreen extends StatefulWidget {
   const HomeworkEightScreen({super.key});
@@ -81,11 +82,8 @@ class _HomeworkEightScreenState extends State<HomeworkEightScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(HomeworkEightTexts.appBarTitle),
-        centerTitle: true,
-      ),
+    return AppScaffold(
+      title: HomeworkEightTexts.appBarTitle,
       body: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: AppDimensions.gap20,

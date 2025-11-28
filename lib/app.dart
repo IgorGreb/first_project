@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_grebenyuk/constants/colors.dart';
 import 'package:flutter_application_grebenyuk/home_page/home_page.dart';
-import 'package:flutter_application_grebenyuk/homeworks/%20ten/async_chat_bot/asycn_chat_bot.dart';
+import 'package:flutter_application_grebenyuk/homeworks/ten/async_api/multi_stage_async_api_screen.dart';
+import 'package:flutter_application_grebenyuk/homeworks/ten/async_chat_bot/asycn_chat_bot.dart';
+import 'package:flutter_application_grebenyuk/homeworks/ten/async_real_time_data/async_rea_time_call_to_api.dart';
+import 'package:flutter_application_grebenyuk/homeworks/ten/ten_page.dart';
+import 'package:flutter_application_grebenyuk/homeworks/ten/async_timer/count_down_timer.dart';
 import 'package:flutter_application_grebenyuk/homeworks/eight/homework_eight_screen.dart';
 import 'package:flutter_application_grebenyuk/homeworks/five/homework_five_screen.dart';
 import 'package:flutter_application_grebenyuk/homeworks/six/contacts_screen.dart';
@@ -31,6 +35,12 @@ class WebAcademyHomeWorkApp extends StatelessWidget {
         HomeworkNineScreen.routeName: (context) => const HomeworkNineScreen(),
         DartSolutionsScreen.routeName: (context) => const DartSolutionsScreen(),
         AsyncChatBot.routeName: (context) => const AsyncChatBot(),
+        TenPage.routeName: (context) => const TenPage(),
+        CountDownTimer.routeName: (context) => const CountDownTimer(),
+        AsyncReaTimeCallToApi.routeName:
+            (context) => const AsyncReaTimeCallToApi(),
+        MultiStageAsyncApiScreen.routeName:
+            (context) => const MultiStageAsyncApiScreen(),
       },
     );
   }

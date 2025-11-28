@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
 import 'package:flutter_application_grebenyuk/constants/text_styles.dart';
 import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
-import 'package:flutter_application_grebenyuk/homeworks/%20ten/async_chat_bot/asycn_chat_bot.dart';
+import 'package:flutter_application_grebenyuk/homeworks/ten/ten_page.dart';
 import 'package:flutter_application_grebenyuk/homeworks/eight/homework_eight_screen.dart';
 import 'package:flutter_application_grebenyuk/homeworks/five/homework_five_screen.dart';
 import 'package:flutter_application_grebenyuk/homeworks/six/profile_screen.dart';
 import 'package:flutter_application_grebenyuk/homeworks/seven/homework_seven_screen.dart';
 import 'package:flutter_application_grebenyuk/homeworks/nine/screens/homework_nine_screen.dart';
 import 'package:flutter_application_grebenyuk/lessons_dart/screens/dart_solutions_screen.dart';
+import 'package:flutter_application_grebenyuk/widgets/app_scaffold.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -40,21 +41,18 @@ class HomeScreen extends StatelessWidget {
       routeName: HomeworkNineScreen.routeName,
     ),
     const _HomeButtonData(
-      title: HomeScreenTexts.goToDartHomeworkTenButton,
-      routeName: AsyncChatBot.routeName,
+      title: HomeScreenTexts.goToHomeworkTenButton,
+      routeName: TenPage.routeName,
     ),
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          HomeScreenTexts.welcomeText,
-          style: AppTextStyles.homeWelcome,
-          textAlign: TextAlign.center,
-        ),
-        centerTitle: true,
+    return AppScaffold(
+      titleWidget: const Text(
+        HomeScreenTexts.welcomeText,
+        style: AppTextStyles.homeWelcome,
+        textAlign: TextAlign.center,
       ),
       body: Padding(
         padding: const EdgeInsets.all(AppDimensions.gap20),

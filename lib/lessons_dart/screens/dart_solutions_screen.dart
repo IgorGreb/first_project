@@ -5,6 +5,7 @@ import 'package:flutter_application_grebenyuk/constants/text_styles.dart';
 import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
 import 'package:flutter_application_grebenyuk/lessons_dart/data/dart_tasks_data.dart';
 import 'package:flutter_application_grebenyuk/lessons_dart/models/dart_task.dart';
+import 'package:flutter_application_grebenyuk/widgets/app_scaffold.dart';
 
 class DartSolutionsScreen extends StatelessWidget {
   const DartSolutionsScreen({super.key});
@@ -13,11 +14,8 @@ class DartSolutionsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(DartSolutionsTexts.appBarTitle),
-        centerTitle: true,
-      ),
+    return AppScaffold(
+      title: DartSolutionsTexts.appBarTitle,
       body: ListView.separated(
         padding: const EdgeInsets.all(AppDimensions.paddingDefault),
         itemCount: dartLessonSections.length,

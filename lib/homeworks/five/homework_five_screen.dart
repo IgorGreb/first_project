@@ -3,6 +3,7 @@ import 'package:flutter_application_grebenyuk/constants/colors.dart';
 import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
 import 'package:flutter_application_grebenyuk/constants/text_styles.dart';
 import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
+import 'package:flutter_application_grebenyuk/widgets/app_scaffold.dart';
 
 class HomeworkFiveScreen extends StatelessWidget {
   const HomeworkFiveScreen({super.key});
@@ -11,11 +12,8 @@ class HomeworkFiveScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(HomeworkFiveTexts.appBarTitle),
-        centerTitle: true,
-      ),
+    return AppScaffold(
+      title: HomeworkFiveTexts.appBarTitle,
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(AppDimensions.paddingDefault),
         child: Column(

@@ -4,6 +4,7 @@ import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
 import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
 import 'package:flutter_application_grebenyuk/homeworks/nine/bloc/recipe_bloc.dart';
 import 'package:flutter_application_grebenyuk/homeworks/nine/models/recipe.dart';
+import 'package:flutter_application_grebenyuk/widgets/app_scaffold.dart';
 
 class RecipeFormScreen extends StatefulWidget {
   const RecipeFormScreen({super.key});
@@ -32,10 +33,8 @@ class _RecipeFormScreenState extends State<RecipeFormScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(RecipeFormTexts.appBarTitle),
-      ),
+    return AppScaffold(
+      title: RecipeFormTexts.appBarTitle,
       body: Padding(
         padding: const EdgeInsets.all(AppDimensions.paddingDefault),
         child: Form(

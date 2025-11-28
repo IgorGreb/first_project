@@ -6,6 +6,7 @@ import 'package:flutter_application_grebenyuk/homeworks/nine/bloc/recipe_bloc.da
 import 'package:flutter_application_grebenyuk/homeworks/nine/models/recipe.dart';
 import 'package:flutter_application_grebenyuk/homeworks/nine/screens/recipe_details_screen.dart';
 import 'package:flutter_application_grebenyuk/homeworks/nine/screens/recipe_form_screen.dart';
+import 'package:flutter_application_grebenyuk/widgets/app_scaffold.dart';
 
 class HomeworkNineScreen extends StatelessWidget {
   const HomeworkNineScreen({super.key});
@@ -26,11 +27,8 @@ class _RecipeListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(HomeworkNineTexts.appBarTitle),
-        centerTitle: true,
-      ),
+    return AppScaffold(
+      title: HomeworkNineTexts.appBarTitle,
       body: BlocBuilder<RecipeBloc, RecipeState>(
         builder: (context, state) {
           if (state.recipes.isEmpty) {

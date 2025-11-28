@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
 import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
 import 'package:flutter_application_grebenyuk/homeworks/nine/models/recipe.dart';
+import 'package:flutter_application_grebenyuk/widgets/app_scaffold.dart';
 
 class RecipeDetailsScreen extends StatelessWidget {
   const RecipeDetailsScreen({super.key, required this.recipe});
@@ -11,10 +12,8 @@ class RecipeDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(recipe.title),
-      ),
+    return AppScaffold(
+      titleWidget: Text(recipe.title),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(AppDimensions.paddingDefault),
         child: Column(

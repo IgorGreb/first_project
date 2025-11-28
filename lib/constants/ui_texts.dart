@@ -8,7 +8,7 @@ class HomeScreenTexts {
   static const String goToHomeworkNineButton = 'Домашка #9';
   static const String goToDartSolutionsButton =
       'Задачі з Dart \n Домашки: #1, #2, #3';
-  static const String goToDartHomeworkTenButton = 'Домашка #10';
+  static const String goToHomeworkTenButton = 'Домашка #10';
 }
 
 class ProfileScreenTexts {
@@ -77,16 +77,14 @@ class HomeworkNineTexts {
 class HomeworkTenTexts {
   static const String appBarTitle = 'Async Chat Bot';
   static const String defaultResponse = 'Ваше питання опрацьоване.';
-  static const String errorResponse =
-      'Щось пішло не так! Спробуйте ще раз.';
+  static const String errorResponse = 'Щось пішло не так! Спробуйте ще раз.';
   static const String positiveResponse = 'Я радий, що вам подобається!';
   static const String emptyChatPlaceholder =
       'Поставте перше питання, щоб розпочати чат.';
   static const String typingLabel = 'Бот друкує';
   static const String questionHint = 'Введіть питання...';
   static const String sendButton = 'Надіслати';
-  static const String weatherResponseTemplate =
-      'Зараз приблизно {temp}°C.';
+  static const String weatherResponseTemplate = 'Зараз приблизно {temp}°C.';
 
   static String weatherResponse(int temperature) =>
       weatherResponseTemplate.replaceFirst('{temp}', '$temperature');
@@ -116,4 +114,57 @@ class RecipeFormTexts {
 
 class DartSolutionsTexts {
   static const String appBarTitle = 'Задачі з Dart';
+}
+
+class TenPageTexts {
+  static const String homeworkTenTitle = 'Домашка #10';
+  static const String chatBot = 'Chat Bot';
+  static const String asyncCountdown = 'Countdown timer';
+  static const String asyncCallToApi = 'Call to API';
+  static const String asyncMultiStage = 'Multi-stage API';
+}
+
+class MultiStageApiTexts {
+  static const String appBarTitle = 'Async API (3 етапи)';
+  static const String startButton = 'Запустити fetchDataFromApi';
+  static const String emptyState = 'Натисніть кнопку, щоб почати';
+  static const String successMessage = 'Дані отримано успішно!';
+  static const String errorPrefix = 'API повернуло помилку (10% шанс)';
+  static const String logSuccessPrefix = '✅ Завершено: ';
+  static const String logErrorPrefix = '❌ ';
+
+  static const String stageInit = 'Етап 1: ініціалізація…';
+  static const String stageRequest = 'Етап 2: виконуємо запит до API…';
+  static const String stageResponse = 'Етап 3: очікуємо відповідь…';
+  static const String stageCompletedSuffix = ' - виконано';
+}
+
+class AsyncTimerTexts {
+  static const String appBarTitle = 'CountDownTimer';
+  static const String errorPrefix = 'Помилка: ';
+  static const String idleState = 'Натисніть «Старт», щоб розпочати';
+  static const String finishedState = 'Таймер завершено!';
+  static const String startButton = 'Старт';
+  static const String startWithErrorButton = 'Старт з помилкою';
+  static const String lastErrorPrefix = 'Остання помилка: ';
+  static const String runningDescription = 'Зворотній відлік триває...';
+  static const String invalidDurationError =
+      'Неможливо створити таймер із від’ємним часом';
+}
+
+class AsyncRealtimeTexts {
+  static const String appBarTitle = 'Async ReaTime Call To Api';
+  static const String streamErrorPrefix = 'Помилка: ';
+  static const String pausedState = 'Потік призупинено. Натисніть "Продовжити".';
+  static const String idleState = 'Натисніть "Старт", щоб запустити потік.';
+  static const String runningState = 'Дані оновлюються кожні 2 секунди';
+  static const String stoppedState = 'Потік зупинено';
+  static const String startButton = 'Старт';
+  static const String pauseButton = 'Пауза';
+  static const String resumeButton = 'Продовжити';
+  static const String stopButton = 'Зупинити';
+  static const String lastErrorPrefix = 'Остання помилка: ';
+
+  static String invalidValueError(int value) =>
+      'Отримано небезпечне значення: $value';
 }

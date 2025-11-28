@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
 import 'package:flutter_application_grebenyuk/constants/text_styles.dart';
 import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
+import 'package:flutter_application_grebenyuk/widgets/app_scaffold.dart';
 
 class ContactsScreen extends StatelessWidget {
   const ContactsScreen({super.key});
@@ -10,11 +11,8 @@ class ContactsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(ContactsScreenTexts.appBarTitle),
-        centerTitle: true,
-      ),
+    return AppScaffold(
+      title: ContactsScreenTexts.appBarTitle,
       body: Padding(
         padding: const EdgeInsets.all(AppDimensions.paddingDefault),
         child: Column(
