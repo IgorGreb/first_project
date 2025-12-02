@@ -9,6 +9,7 @@ class HomeScreenTexts {
   static const String goToDartSolutionsButton =
       'Задачі з Dart \n Домашки: #1, #2, #3';
   static const String goToHomeworkTenButton = 'Домашка #10';
+  static const String goToHomeworkElevenButton = 'Домашка #11';
 }
 
 class ProfileScreenTexts {
@@ -155,7 +156,8 @@ class AsyncTimerTexts {
 class AsyncRealtimeTexts {
   static const String appBarTitle = 'Async ReaTime Call To Api';
   static const String streamErrorPrefix = 'Помилка: ';
-  static const String pausedState = 'Потік призупинено. Натисніть "Продовжити".';
+  static const String pausedState =
+      'Потік призупинено. Натисніть "Продовжити".';
   static const String idleState = 'Натисніть "Старт", щоб запустити потік.';
   static const String runningState = 'Дані оновлюються кожні 2 секунди';
   static const String stoppedState = 'Потік зупинено';
@@ -167,4 +169,9 @@ class AsyncRealtimeTexts {
 
   static String invalidValueError(int value) =>
       'Отримано небезпечне значення: $value';
+}
+
+class ElevenHWTexts {
+  static const String appBarTitle = 'Домашка #11';
+  static const String title = 'Список постів';
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_grebenyuk/constants/colors.dart';
 import 'package:flutter_application_grebenyuk/home_page/home_page.dart';
+import 'package:flutter_application_grebenyuk/homeworks/eleven/eleven_hw_page.dart';
 import 'package:flutter_application_grebenyuk/homeworks/ten/async_api/multi_stage_async_api_screen.dart';
 import 'package:flutter_application_grebenyuk/homeworks/ten/async_chat_bot/asycn_chat_bot.dart';
 import 'package:flutter_application_grebenyuk/homeworks/ten/async_real_time_data/async_rea_time_call_to_api.dart';
@@ -41,6 +42,7 @@ class WebAcademyHomeWorkApp extends StatelessWidget {
             (context) => const AsyncReaTimeCallToApi(),
         MultiStageAsyncApiScreen.routeName:
             (context) => const MultiStageAsyncApiScreen(),
+        ElevenHwPage.routeName: (context) => const ElevenHwPage(),
       },
     );
   }
