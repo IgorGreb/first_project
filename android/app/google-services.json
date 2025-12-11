@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "183514098272",
+    "project_id": "home-work-twelve-web-academy",
+    "storage_bucket": "home-work-twelve-web-academy.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183514098272:android:715a20278a5a12e6eeb105",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_grebenyuk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAZ5EmkKq6xp9rt0EdCOKZr9yxd1khuWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

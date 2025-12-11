@@ -35,9 +35,9 @@ class ContactsScreenTexts {
 }
 
 class HomeworkFiveTexts {
-  static const String appBarTitle = 'My Homework';
-  static const String sectionTitle = 'Beautiful Images';
-  static const String highlightText = 'My text';
+  static const String appBarTitle = 'Домашнє завдання №5';
+  static const String sectionTitle = 'Найкращі світлини';
+  static const String highlightText = 'Мій текст';
   static const String firstImageUrl =
       'https://fastly.picsum.photos/id/179/2048/1365.jpg?hmac=GJyDjrvfBfjPfJPqSBd2pX6sjvsGbG10d21blr5bTS8';
   static const String secondImageUrl =
@@ -46,22 +46,22 @@ class HomeworkFiveTexts {
 }
 
 class HomeworkSevenTexts {
-  static const String appBarTitle = 'User Profile';
-  static const String profileName = 'Oleksandr';
-  static const String profileDescription = 'Flutter Developer';
-  static const String aboutTitle = 'About';
+  static const String appBarTitle = 'Профіль користувача';
+  static const String profileName = 'Олександр';
+  static const String profileDescription = 'Розробник Flutter';
+  static const String aboutTitle = 'Про мене';
   static const String aboutDescription =
-      'I build mobile experiences with Flutter, Dart, and Firebase.';
+      'Створюю мобільні застосунки на Flutter, Dart та Firebase.';
 }
 
 class UserStatusTexts {
-  static const String projects = 'Projects';
-  static const String followers = 'Followers';
-  static const String following = 'Following';
+  static const String projects = 'Проєкти';
+  static const String followers = 'Підписники';
+  static const String following = 'Підписок';
 }
 
 class HomeworkEightTexts {
-  static const String appBarTitle = 'Homework #8: To-Do List';
+  static const String appBarTitle = 'Домашка №8: список справ';
   static const String newTaskTitle = 'Нове завдання';
   static const String taskHint = 'Опишіть, що потрібно зробити';
   static const String addButton = 'Додати';
@@ -77,7 +77,7 @@ class HomeworkNineTexts {
 }
 
 class HomeworkTenTexts {
-  static const String appBarTitle = 'Async Chat Bot';
+  static const String appBarTitle = 'Асинхронний чат-бот';
   static const String defaultResponse = 'Ваше питання опрацьоване.';
   static const String errorResponse = 'Щось пішло не так! Спробуйте ще раз.';
   static const String positiveResponse = 'Я радий, що вам подобається!';
@@ -120,15 +120,15 @@ class DartSolutionsTexts {
 
 class TenPageTexts {
   static const String homeworkTenTitle = 'Домашка #10';
-  static const String chatBot = 'Chat Bot';
-  static const String asyncCountdown = 'Countdown timer';
-  static const String asyncCallToApi = 'Call to API';
-  static const String asyncMultiStage = 'Multi-stage API';
+  static const String chatBot = 'Чат-бот';
+  static const String asyncCountdown = 'Таймер відліку';
+  static const String asyncCallToApi = 'Потік до API';
+  static const String asyncMultiStage = 'Багатостадійний API';
 }
 
 class MultiStageApiTexts {
-  static const String appBarTitle = 'Async API (3 етапи)';
-  static const String startButton = 'Запустити fetchDataFromApi';
+  static const String appBarTitle = 'Асинхронний API (3 етапи)';
+  static const String startButton = 'Запустити запит до API';
   static const String emptyState = 'Натисніть кнопку, щоб почати';
   static const String successMessage = 'Дані отримано успішно!';
   static const String errorPrefix = 'API повернуло помилку (10% шанс)';
@@ -142,7 +142,7 @@ class MultiStageApiTexts {
 }
 
 class AsyncTimerTexts {
-  static const String appBarTitle = 'CountDownTimer';
+  static const String appBarTitle = 'Таймер зворотного відліку';
   static const String errorPrefix = 'Помилка: ';
   static const String idleState = 'Натисніть «Старт», щоб розпочати';
   static const String finishedState = 'Таймер завершено!';
@@ -155,7 +155,7 @@ class AsyncTimerTexts {
 }
 
 class AsyncRealtimeTexts {
-  static const String appBarTitle = 'Async ReaTime Call To Api';
+  static const String appBarTitle = 'Асинхронний потік до API';
   static const String streamErrorPrefix = 'Помилка: ';
   static const String pausedState =
       'Потік призупинено. Натисніть "Продовжити".';

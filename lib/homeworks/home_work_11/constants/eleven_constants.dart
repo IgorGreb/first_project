@@ -13,7 +13,7 @@ class ElevenApiConstants {
 class ElevenTexts {
   const ElevenTexts._();
 
-  static const title = '';
+  static const title = 'Домашка #11';
   static const postsHeader = 'Список постів';
   static const postsSubtitle = 'Натисни на картку, щоб переглянути коментарі';
   static const commentsHeader = 'Коментарі';

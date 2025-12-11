@@ -5,8 +5,11 @@ class AppColors {
   static const Color borderGrey = Color(0xFF9E9E9E);
   static const Color accentRed = Color(0xFFF44336);
   static const Color black12 = Color(0x1F000000);
+  static const Color black = Color(0xFF000000);
   static const Color grey600 = Color(0xFF757575);
   static const Color grey700 = Color(0xFF616161);
+  static const Color white = Color(0xFFFFFFFF);
+  static const Color white70 = Color(0xB3FFFFFF);
   static const Color transparent = Color(0x00000000);
   static const Color chatBotBubble = Color(0xFFEEEEEE);
   static const Color chatErrorBubble = Color(0xFFFFCDD2);

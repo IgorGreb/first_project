@@ -13,9 +13,9 @@ class PostRemoteDataSource {
       final response = await _dio.get(ElevenApiConstants.posts);
       return (response.data as List).map((e) => PostModel.fromJson(e)).toList();
     } on DioException catch (error) {
-      throw Exception('Failed to fetch posts: ${error.message}');
+      throw Exception('Не вдалося отримати пости: ${error.message}');
     } catch (error) {
-      throw Exception('Unexpected error while fetching posts: $error');
+      throw Exception('Неочікувана помилка під час отримання постів: $error');
     }
   }
 
@@ -26,9 +26,11 @@ class PostRemoteDataSource {
           .map((e) => CommentModel.fromJson(e))
           .toList();
     } on DioException catch (error) {
-      throw Exception('Failed to fetch comments: ${error.message}');
+      throw Exception('Не вдалося отримати коментарі: ${error.message}');
     } catch (error) {
-      throw Exception('Unexpected error while fetching comments: $error');
+      throw Exception(
+        'Неочікувана помилка під час отримання коментарів: $error',
+      );
     }
   }
 
@@ -36,9 +38,9 @@ class PostRemoteDataSource {
     try {
       await _dio.delete(ElevenApiConstants.post(id));
     } on DioException catch (error) {
-      throw Exception('Failed to delete post: ${error.message}');
+      throw Exception('Не вдалося видалити пост: ${error.message}');
     } catch (error) {
-      throw Exception('Unexpected error while deleting post: $error');
+      throw Exception('Неочікувана помилка під час видалення поста: $error');
     }
   }
 }

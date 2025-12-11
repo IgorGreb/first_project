@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_grebenyuk/constants/colors.dart';
 import 'package:flutter_application_grebenyuk/homeworks/home_work_11/bloc/get_post_bloc.dart';
 import 'package:flutter_application_grebenyuk/homeworks/home_work_11/bloc/get_post_event.dart';
 import 'package:flutter_application_grebenyuk/homeworks/home_work_11/bloc/get_post_state.dart';
@@ -284,7 +285,7 @@ class _PostsList extends StatelessWidget {
         listView,
         Container(
           decoration: BoxDecoration(
-            color: Colors.black.withOpacity(ElevenDimens.overlayOpacity),
+            color: AppColors.black.withOpacity(ElevenDimens.overlayOpacity),
             borderRadius: BorderRadius.circular(ElevenDimens.cardRadius),
           ),
           child: const _CenteredLoader(),
