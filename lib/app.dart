@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_grebenyuk/constants/colors.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_13/home_work_13.dart';
 import 'package:flutter_application_grebenyuk/home_page/home_page.dart';
 import 'package:flutter_application_grebenyuk/homeworks/home_work_10/async_api/multi_stage_async_api_screen.dart';
 import 'package:flutter_application_grebenyuk/homeworks/home_work_10/async_chat_bot/asycn_chat_bot.dart';
@@ -45,6 +46,7 @@ class WebAcademyHomeWorkApp extends StatelessWidget {
             (context) => const MultiStageAsyncApiScreen(),
         ElevenHwPage.routeName: (context) => const ElevenHwPage(),
         HomeWork12.routeName: (context) => const HomeWork12(),
+        HomeWork13.routeName: (context) => const HomeWork13(),
       },
     );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
 import 'package:flutter_application_grebenyuk/constants/text_styles.dart';
 import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_13/home_work_13.dart';
 import 'package:flutter_application_grebenyuk/homeworks/home_work_11/eleven_hw_page.dart';
 import 'package:flutter_application_grebenyuk/homeworks/home_work_10/ten_page.dart';
 import 'package:flutter_application_grebenyuk/homeworks/home_work_12/home_work_12.dart';
@@ -53,6 +54,10 @@ class HomeScreen extends StatelessWidget {
     const _HomeButtonData(
       title: HomeScreenTexts.goToHomeworkTwelveButton,
       routeName: HomeWork12.routeName,
+    ),
+    const _HomeButtonData(
+      title: HomeScreenTexts.goToFinanceTrackerButton,
+      routeName: HomeWork13.routeName,
     ),
   ];
 

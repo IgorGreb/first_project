@@ -11,6 +11,7 @@ class HomeScreenTexts {
   static const String goToHomeworkTenButton = 'Домашка #10';
   static const String goToHomeworkElevenButton = 'Домашка #11';
   static const String goToHomeworkTwelveButton = 'Домашка #12';
+  static const String goToFinanceTrackerButton = 'Домашка #13';
 }
 
 class ProfileScreenTexts {
