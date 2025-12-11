@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
 import 'package:flutter_application_grebenyuk/constants/text_styles.dart';
 import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
-import 'package:flutter_application_grebenyuk/homeworks/six/contacts_screen.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_6/contacts_screen.dart';
 import 'package:flutter_application_grebenyuk/widgets/app_scaffold.dart';
 
 class ProfileScreen extends StatelessWidget {

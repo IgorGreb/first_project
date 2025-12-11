@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eleven/bloc/get_post_event.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eleven/bloc/get_post_state.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eleven/constants/eleven_constants.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eleven/services/post_remote_data_source.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_11/bloc/get_post_event.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_11/bloc/get_post_state.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_11/constants/eleven_constants.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_11/services/post_remote_data_source.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class GetPostBloc extends Bloc<GetPostEvent, GetPostState> {

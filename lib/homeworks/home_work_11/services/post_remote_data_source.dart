@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eleven/constants/eleven_constants.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eleven/models/comment_model.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eleven/models/post_model.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_11/constants/eleven_constants.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_11/models/comment_model.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_11/models/post_model.dart';
 
 class PostRemoteDataSource {
   PostRemoteDataSource({Dio? dio}) : _dio = dio ?? Dio();
@@ -21,9 +21,7 @@ class PostRemoteDataSource {
 
   Future<List<CommentModel>> getCommentsByPost(int id) async {
     try {
-      final response = await _dio.get(
-        ElevenApiConstants.commentsByPost(id),
-      );
+      final response = await _dio.get(ElevenApiConstants.commentsByPost(id));
       return (response.data as List)
           .map((e) => CommentModel.fromJson(e))
           .toList();

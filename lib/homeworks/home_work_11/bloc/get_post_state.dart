@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eleven/models/comment_model.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eleven/models/post_model.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_11/models/comment_model.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_11/models/post_model.dart';
 
 enum GetPostStatus {
   initial,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
 import 'package:flutter_application_grebenyuk/constants/text_styles.dart';
 import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eight/models/todo_task.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_8/models/todo_task.dart';
 
 class TodoTaskTile extends StatelessWidget {
   const TodoTaskTile({

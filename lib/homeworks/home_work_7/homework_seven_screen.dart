@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
 import 'package:flutter_application_grebenyuk/constants/text_styles.dart';
 import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
-import 'package:flutter_application_grebenyuk/homeworks/seven/widgets/profile_header.dart';
-import 'package:flutter_application_grebenyuk/homeworks/seven/widgets/user_status.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_7/widgets/profile_header.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_7/widgets/user_status.dart';
 import 'package:flutter_application_grebenyuk/widgets/app_scaffold.dart';
 
 class HomeworkSevenScreen extends StatelessWidget {

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eleven/bloc/get_post_bloc.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eleven/bloc/get_post_event.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eleven/bloc/get_post_state.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eleven/constants/eleven_constants.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eleven/models/comment_model.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eleven/models/post_model.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eleven/services/post_remote_data_source.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_11/bloc/get_post_bloc.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_11/bloc/get_post_event.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_11/bloc/get_post_state.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_11/constants/eleven_constants.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_11/models/comment_model.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_11/models/post_model.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_11/services/post_remote_data_source.dart';
 import 'package:flutter_application_grebenyuk/widgets/app_scaffold.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,13 +17,11 @@ class ElevenHwPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => GetPostBloc(
-        postRemoteDataSource: PostRemoteDataSource(),
-      )..add(const GetPostsRequested()),
-      child: const AppScaffold(
-        title: ElevenTexts.title,
-        body: _PostsBody(),
-      ),
+      create:
+          (_) =>
+              GetPostBloc(postRemoteDataSource: PostRemoteDataSource())
+                ..add(const GetPostsRequested()),
+      child: const AppScaffold(title: ElevenTexts.title, body: _PostsBody()),
     );
   }
 }
@@ -40,9 +38,10 @@ class _PostsBody extends StatelessWidget {
           vertical: ElevenDimens.pagePaddingVertical,
         ),
         child: BlocListener<GetPostBloc, GetPostState>(
-          listenWhen: (previous, current) =>
-              previous.notificationMessage != current.notificationMessage &&
-              current.notificationMessage != null,
+          listenWhen:
+              (previous, current) =>
+                  previous.notificationMessage != current.notificationMessage &&
+                  current.notificationMessage != null,
           listener: (context, state) {
             final message = state.notificationMessage;
             if (message == null) return;
@@ -86,9 +85,10 @@ class _PostsBody extends StatelessWidget {
                     subtitle:
                         '${ElevenTexts.commentsHint}${state.selectedPostId ?? '-'}',
                     action: TextButton.icon(
-                      onPressed: () => context
-                          .read<GetPostBloc>()
-                          .add(const CommentsViewClosed()),
+                      onPressed:
+                          () => context.read<GetPostBloc>().add(
+                            const CommentsViewClosed(),
+                          ),
                       icon: const Icon(Icons.arrow_back),
                       label: const Text(ElevenTexts.backToPosts),
                     ),
@@ -186,14 +186,13 @@ class _PostsList extends StatelessWidget {
       child: ListView.separated(
         physics: const AlwaysScrollableScrollPhysics(),
         itemCount: posts.length,
-        separatorBuilder: (_, __) =>
-            const SizedBox(height: ElevenDimens.spaceMD),
+        separatorBuilder:
+            (_, __) => const SizedBox(height: ElevenDimens.spaceMD),
         itemBuilder: (_, index) {
           final post = posts[index];
           final postId = post.id;
           final isSelected = postId != null && postId == selectedPostId;
-          final isDeleting =
-              postId != null && deletingPostIds.contains(postId);
+          final isDeleting = postId != null && deletingPostIds.contains(postId);
 
           return Card(
             elevation: isSelected ? 4 : 1,
@@ -202,9 +201,10 @@ class _PostsList extends StatelessWidget {
             ),
             child: InkWell(
               borderRadius: BorderRadius.circular(ElevenDimens.cardRadius),
-              onTap: postId == null || isDeleting
-                  ? null
-                  : () => context.read<GetPostBloc>().add(
+              onTap:
+                  postId == null || isDeleting
+                      ? null
+                      : () => context.read<GetPostBloc>().add(
                         GetPostCommentsRequested(postId: postId),
                       ),
               child: Padding(
@@ -226,8 +226,11 @@ class _PostsList extends StatelessWidget {
                       children: [
                         Text(
                           '${ElevenTexts.postIdLabel}${postId ?? ElevenTexts.placeholderDash}',
-                          style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                            color: Theme.of(context).colorScheme.onSurfaceVariant,
+                          style: Theme.of(
+                            context,
+                          ).textTheme.labelSmall?.copyWith(
+                            color:
+                                Theme.of(context).colorScheme.onSurfaceVariant,
                           ),
                         ),
                         Row(
@@ -237,14 +240,17 @@ class _PostsList extends StatelessWidget {
                               const SizedBox(
                                 width: ElevenDimens.deletingIndicatorSize,
                                 height: ElevenDimens.deletingIndicatorSize,
-                                child: CircularProgressIndicator(strokeWidth: 2),
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                ),
                               )
                             else
                               IconButton(
                                 tooltip: ElevenTexts.deleteButtonTooltip,
-                                onPressed: postId == null
-                                    ? null
-                                    : () => context.read<GetPostBloc>().add(
+                                onPressed:
+                                    postId == null
+                                        ? null
+                                        : () => context.read<GetPostBloc>().add(
                                           DeletePostRequested(postId: postId),
                                         ),
                                 icon: const Icon(Icons.delete_outline),
@@ -253,9 +259,10 @@ class _PostsList extends StatelessWidget {
                             Icon(
                               Icons.arrow_forward_ios_rounded,
                               size: ElevenDimens.iconSmall,
-                              color: Theme.of(context)
-                                  .colorScheme
-                                  .onSurfaceVariant,
+                              color:
+                                  Theme.of(
+                                    context,
+                                  ).colorScheme.onSurfaceVariant,
                             ),
                           ],
                         ),
@@ -304,8 +311,7 @@ class _CommentsView extends StatelessWidget {
 
     return ListView.separated(
       itemCount: comments.length,
-      separatorBuilder: (_, __) =>
-          const SizedBox(height: ElevenDimens.spaceMD),
+      separatorBuilder: (_, __) => const SizedBox(height: ElevenDimens.spaceMD),
       itemBuilder: (_, index) {
         final comment = comments[index];
         final email = comment.email?.trim() ?? '';

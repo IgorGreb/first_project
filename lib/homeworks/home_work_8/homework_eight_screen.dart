@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
 import 'package:flutter_application_grebenyuk/constants/text_styles.dart';
 import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eight/models/todo_task.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eight/widgets/animated_task_tile.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eight/widgets/empty_state.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_8/models/todo_task.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_8/widgets/animated_task_tile.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_8/widgets/empty_state.dart';
 import 'package:flutter_application_grebenyuk/widgets/app_scaffold.dart';
 
 class HomeworkEightScreen extends StatefulWidget {
@@ -94,8 +94,7 @@ class _HomeworkEightScreenState extends State<HomeworkEightScreen> {
             Card(
               elevation: 2,
               child: Padding(
-                padding:
-                    const EdgeInsets.all(AppDimensions.paddingDefault),
+                padding: const EdgeInsets.all(AppDimensions.paddingDefault),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
@@ -135,8 +134,7 @@ class _HomeworkEightScreenState extends State<HomeworkEightScreen> {
                   AnimatedList(
                     key: _listKey,
                     initialItemCount: _tasks.length,
-                    padding:
-                        const EdgeInsets.only(bottom: AppDimensions.gap12),
+                    padding: const EdgeInsets.only(bottom: AppDimensions.gap12),
                     itemBuilder: (context, index, animation) {
                       final TodoTask task = _tasks[index];
                       return AnimatedTaskTile(
@@ -148,8 +146,7 @@ class _HomeworkEightScreenState extends State<HomeworkEightScreen> {
                       );
                     },
                   ),
-                  if (_tasks.isEmpty)
-                    const TodoEmptyState(),
+                  if (_tasks.isEmpty) const TodoEmptyState(),
                 ],
               ),
             ),

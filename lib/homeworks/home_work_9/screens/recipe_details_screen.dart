@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
 import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
-import 'package:flutter_application_grebenyuk/homeworks/nine/models/recipe.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_9/models/recipe.dart';
 import 'package:flutter_application_grebenyuk/widgets/app_scaffold.dart';
 
 class RecipeDetailsScreen extends StatelessWidget {

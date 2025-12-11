@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_application_grebenyuk/constants/recipes.dart';
-import 'package:flutter_application_grebenyuk/homeworks/nine/models/recipe.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_9/models/recipe.dart';
 
 part 'recipe_event.dart';
 part 'recipe_state.dart';

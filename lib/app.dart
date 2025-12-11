@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_grebenyuk/constants/colors.dart';
 import 'package:flutter_application_grebenyuk/home_page/home_page.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eleven/eleven_hw_page.dart';
-import 'package:flutter_application_grebenyuk/homeworks/ten/async_api/multi_stage_async_api_screen.dart';
-import 'package:flutter_application_grebenyuk/homeworks/ten/async_chat_bot/asycn_chat_bot.dart';
-import 'package:flutter_application_grebenyuk/homeworks/ten/async_real_time_data/async_rea_time_call_to_api.dart';
-import 'package:flutter_application_grebenyuk/homeworks/ten/ten_page.dart';
-import 'package:flutter_application_grebenyuk/homeworks/ten/async_timer/count_down_timer.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eight/homework_eight_screen.dart';
-import 'package:flutter_application_grebenyuk/homeworks/five/homework_five_screen.dart';
-import 'package:flutter_application_grebenyuk/homeworks/six/contacts_screen.dart';
-import 'package:flutter_application_grebenyuk/homeworks/six/profile_screen.dart';
-import 'package:flutter_application_grebenyuk/homeworks/seven/homework_seven_screen.dart';
-import 'package:flutter_application_grebenyuk/homeworks/nine/screens/homework_nine_screen.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_10/async_api/multi_stage_async_api_screen.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_10/async_chat_bot/asycn_chat_bot.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_10/async_real_time_data/async_rea_time_call_to_api.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_10/async_timer/count_down_timer.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_11/eleven_hw_page.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_10/ten_page.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_12/home_work_12.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_8/homework_eight_screen.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_5/homework_five_screen.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_6/contacts_screen.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_6/profile_screen.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_7/homework_seven_screen.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_9/screens/homework_nine_screen.dart';
 import 'package:flutter_application_grebenyuk/lessons_dart/screens/dart_solutions_screen.dart';
 
 class WebAcademyHomeWorkApp extends StatelessWidget {
@@ -43,6 +44,7 @@ class WebAcademyHomeWorkApp extends StatelessWidget {
         MultiStageAsyncApiScreen.routeName:
             (context) => const MultiStageAsyncApiScreen(),
         ElevenHwPage.routeName: (context) => const ElevenHwPage(),
+        HomeWork12.routeName: (context) => const HomeWork12(),
       },
     );
   }

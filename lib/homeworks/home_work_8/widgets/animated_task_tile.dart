@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eight/models/todo_task.dart';
-import 'package:flutter_application_grebenyuk/homeworks/eight/widgets/todo_task_tile.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_8/models/todo_task.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_8/widgets/todo_task_tile.dart';
 
 class AnimatedTaskTile extends StatelessWidget {
   const AnimatedTaskTile({
@@ -20,8 +20,10 @@ class AnimatedTaskTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Animation<double> curved =
-        CurvedAnimation(parent: animation, curve: Curves.easeOutCubic);
+    final Animation<double> curved = CurvedAnimation(
+      parent: animation,
+      curve: Curves.easeOutCubic,
+    );
 
     return SizeTransition(
       sizeFactor: curved,

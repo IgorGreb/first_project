@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
 import 'package:flutter_application_grebenyuk/constants/text_styles.dart';
 import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
-import 'package:flutter_application_grebenyuk/homeworks/ten/async_api/multi_stage_async_api_screen.dart';
-import 'package:flutter_application_grebenyuk/homeworks/ten/async_chat_bot/asycn_chat_bot.dart';
-import 'package:flutter_application_grebenyuk/homeworks/ten/async_real_time_data/async_rea_time_call_to_api.dart';
-import 'package:flutter_application_grebenyuk/homeworks/ten/async_timer/count_down_timer.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_10/async_api/multi_stage_async_api_screen.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_10/async_chat_bot/asycn_chat_bot.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_10/async_real_time_data/async_rea_time_call_to_api.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_10/async_timer/count_down_timer.dart';
 import 'package:flutter_application_grebenyuk/widgets/app_scaffold.dart';
 
 class TenPage extends StatelessWidget {

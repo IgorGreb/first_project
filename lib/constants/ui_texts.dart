@@ -10,6 +10,7 @@ class HomeScreenTexts {
       'Задачі з Dart \n Домашки: #1, #2, #3';
   static const String goToHomeworkTenButton = 'Домашка #10';
   static const String goToHomeworkElevenButton = 'Домашка #11';
+  static const String goToHomeworkTwelveButton = 'Домашка #12';
 }
 
 class ProfileScreenTexts {

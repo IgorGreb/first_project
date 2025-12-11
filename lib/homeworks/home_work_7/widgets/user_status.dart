@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
 import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
-import 'package:flutter_application_grebenyuk/homeworks/seven/widgets/statistics_widget_builder.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_7/widgets/statistics_widget_builder.dart';
 
 class UserStatusWidget extends StatelessWidget {
   const UserStatusWidget({

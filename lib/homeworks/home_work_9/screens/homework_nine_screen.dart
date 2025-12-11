@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_application_grebenyuk/constants/dimensions.dart';
 import 'package:flutter_application_grebenyuk/constants/ui_texts.dart';
-import 'package:flutter_application_grebenyuk/homeworks/nine/bloc/recipe_bloc.dart';
-import 'package:flutter_application_grebenyuk/homeworks/nine/models/recipe.dart';
-import 'package:flutter_application_grebenyuk/homeworks/nine/screens/recipe_details_screen.dart';
-import 'package:flutter_application_grebenyuk/homeworks/nine/screens/recipe_form_screen.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_9/bloc/recipe_bloc.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_9/models/recipe.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_9/screens/recipe_details_screen.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_9/screens/recipe_form_screen.dart';
 import 'package:flutter_application_grebenyuk/widgets/app_scaffold.dart';
 
 class HomeworkNineScreen extends StatelessWidget {
