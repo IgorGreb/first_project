@@ -9,6 +9,7 @@ import 'package:flutter_application_grebenyuk/homeworks/home_work_10/async_timer
 import 'package:flutter_application_grebenyuk/homeworks/home_work_11/eleven_hw_page.dart';
 import 'package:flutter_application_grebenyuk/homeworks/home_work_10/ten_page.dart';
 import 'package:flutter_application_grebenyuk/homeworks/home_work_12/home_work_12.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_14/home_work_14.dart';
 import 'package:flutter_application_grebenyuk/homeworks/home_work_8/homework_eight_screen.dart';
 import 'package:flutter_application_grebenyuk/homeworks/home_work_5/homework_five_screen.dart';
 import 'package:flutter_application_grebenyuk/homeworks/home_work_6/contacts_screen.dart';
@@ -47,6 +48,7 @@ class WebAcademyHomeWorkApp extends StatelessWidget {
         ElevenHwPage.routeName: (context) => const ElevenHwPage(),
         HomeWork12.routeName: (context) => const HomeWork12(),
         HomeWork13.routeName: (context) => const HomeWork13(),
+        HomeWork14.routeName: (context) => const HomeWork14(),
       },
     );
   }

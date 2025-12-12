@@ -12,6 +12,7 @@ class HomeScreenTexts {
   static const String goToHomeworkElevenButton = 'Домашка #11';
   static const String goToHomeworkTwelveButton = 'Домашка #12';
   static const String goToFinanceTrackerButton = 'Домашка #13';
+  static const String goToMultimediaHomeworkButton = 'Домашка #14';
 }
 
 class ProfileScreenTexts {
@@ -133,8 +134,8 @@ class MultiStageApiTexts {
   static const String emptyState = 'Натисніть кнопку, щоб почати';
   static const String successMessage = 'Дані отримано успішно!';
   static const String errorPrefix = 'API повернуло помилку (10% шанс)';
-  static const String logSuccessPrefix = '✅ Завершено: ';
-  static const String logErrorPrefix = '❌ ';
+  static const String logSuccessPrefix = ' Завершено: ';
+  static const String logErrorPrefix = '';
 
   static const String stageInit = 'Етап 1: ініціалізація…';
   static const String stageRequest = 'Етап 2: виконуємо запит до API…';

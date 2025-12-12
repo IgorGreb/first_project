@@ -6,6 +6,7 @@ import 'package:flutter_application_grebenyuk/homeworks/home_work_13/home_work_1
 import 'package:flutter_application_grebenyuk/homeworks/home_work_11/eleven_hw_page.dart';
 import 'package:flutter_application_grebenyuk/homeworks/home_work_10/ten_page.dart';
 import 'package:flutter_application_grebenyuk/homeworks/home_work_12/home_work_12.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_14/home_work_14.dart';
 import 'package:flutter_application_grebenyuk/homeworks/home_work_8/homework_eight_screen.dart';
 import 'package:flutter_application_grebenyuk/homeworks/home_work_5/homework_five_screen.dart';
 import 'package:flutter_application_grebenyuk/homeworks/home_work_6/profile_screen.dart';
@@ -58,6 +59,10 @@ class HomeScreen extends StatelessWidget {
     const _HomeButtonData(
       title: HomeScreenTexts.goToFinanceTrackerButton,
       routeName: HomeWork13.routeName,
+    ),
+    const _HomeButtonData(
+      title: HomeScreenTexts.goToMultimediaHomeworkButton,
+      routeName: HomeWork14.routeName,
     ),
   ];
 
