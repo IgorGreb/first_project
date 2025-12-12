@@ -37,9 +37,10 @@ class _Homework14ThemeWrapper extends StatelessWidget {
         }
 
         final themeCubit = context.read<ThemeCubit>();
-        final ThemeData themeData = state.themeMode == ThemeMode.dark
-            ? themeCubit.darkTheme
-            : themeCubit.lightTheme;
+        final ThemeData themeData =
+            state.themeMode == ThemeMode.dark
+                ? themeCubit.darkTheme
+                : themeCubit.lightTheme;
 
         return Theme(data: themeData, child: const _Homework14View());
       },
@@ -55,49 +56,10 @@ class _Homework14View extends StatelessWidget {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     return AppScaffold(
-      appBar: AppBar(
-        title: const Text(Homework14Texts.screenTitle),
-        actions: const [ThemeSwitchButton(iconOnly: true)],
-      ),
+      appBar: AppBar(actions: const [ThemeSwitchButton(iconOnly: true)]),
       body: ListView(
         padding: const EdgeInsets.all(Homework14Dimensions.pagePadding),
         children: [
-          Container(
-            padding: const EdgeInsets.all(Homework14Dimensions.cardPadding),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(
-                Homework14Dimensions.heroBorderRadius,
-              ),
-              gradient: LinearGradient(
-                colors: [
-                  colorScheme.primary.withValues(alpha: 0.85),
-                  colorScheme.secondary.withValues(alpha: 0.8),
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  Homework14Texts.heroTitle,
-                  style: Homework14TextStyles.pageTitle.copyWith(
-                    color: colorScheme.onPrimary,
-                  ),
-                ),
-                const SizedBox(height: Homework14Dimensions.smallSpacing),
-                Text(
-                  Homework14Texts.heroSubtitle,
-                  style: Homework14TextStyles.body.copyWith(
-                    color: colorScheme.onPrimary.withValues(alpha: 0.9),
-                  ),
-                ),
-                const SizedBox(height: Homework14Dimensions.heroSpacing),
-                const ThemeSwitchButton(),
-              ],
-            ),
-          ),
           const SizedBox(height: Homework14Dimensions.sectionSpacing),
           Text(
             Homework14Texts.sectionTitle,
@@ -113,12 +75,6 @@ class _Homework14View extends StatelessWidget {
           const SizedBox(height: Homework14Dimensions.sectionSpacing),
           const HomeworkAudioCard(),
           const SizedBox(height: Homework14Dimensions.sliderSpacing),
-          Text(
-            Homework14Texts.themePersistenceNote,
-            style: Homework14TextStyles.caption.copyWith(
-              color: colorScheme.onSurface.withValues(alpha: 0.7),
-            ),
-          ),
         ],
       ),
     );
