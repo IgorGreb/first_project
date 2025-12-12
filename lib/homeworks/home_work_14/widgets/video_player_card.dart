@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_14/constants/app_constants.dart';
 import 'package:flutter_application_grebenyuk/homeworks/home_work_14/constants/app_styles.dart';
 import 'package:video_player/video_player.dart';
 
@@ -62,21 +63,30 @@ class _HomeworkVideoCardState extends State<HomeworkVideoCard> {
     return Card(
       elevation: 0,
       color: colorScheme.surface,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(
+          Homework14Dimensions.cardBorderRadius,
+        ),
+      ),
       child: Padding(
-        padding: const EdgeInsets.all(24),
+        padding: const EdgeInsets.all(Homework14Dimensions.cardPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Локальне відео', style: Homework14TextStyles.sectionTitle),
-            const SizedBox(height: 6),
             Text(
-              'Файл з каталогу проєкту відтворюється за допомогою video_player.',
+              Homework14Texts.videoCardTitle,
+              style: Homework14TextStyles.sectionTitle,
+            ),
+            const SizedBox(height: Homework14Dimensions.tinySpacing),
+            Text(
+              Homework14Texts.videoCardDescription,
               style: Homework14TextStyles.body,
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: Homework14Dimensions.infoSpacing),
             ClipRRect(
-              borderRadius: BorderRadius.circular(22),
+              borderRadius: BorderRadius.circular(
+                Homework14Dimensions.mediaBorderRadius,
+              ),
               child: FutureBuilder<void>(
                 future: _initFuture,
                 builder: (context, snapshot) {
@@ -111,7 +121,7 @@ class _HomeworkVideoCardState extends State<HomeworkVideoCard> {
                 },
               ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: Homework14Dimensions.progressSpacing),
             if (_controller.value.isInitialized)
               VideoProgressIndicator(
                 _controller,
@@ -122,24 +132,25 @@ class _HomeworkVideoCardState extends State<HomeworkVideoCard> {
                   backgroundColor: colorScheme.primary.withValues(alpha: 0.2),
                 ),
               ),
-            const SizedBox(height: 12),
+            const SizedBox(height: Homework14Dimensions.sliderSpacing),
             Wrap(
-              spacing: 12,
+              spacing: Homework14Dimensions.wrapSpacing,
+              runSpacing: Homework14Dimensions.wrapSpacing,
               children: [
                 _ControlButton(
                   icon: Icons.play_arrow_rounded,
-                  label: 'Відтворити',
+                  label: Homework14Texts.videoPlay,
                   onPressed: _togglePlay,
                   isActive: _controller.value.isPlaying,
                 ),
                 _ControlButton(
                   icon: Icons.pause_rounded,
-                  label: 'Пауза',
+                  label: Homework14Texts.videoPause,
                   onPressed: _pause,
                 ),
                 _ControlButton(
                   icon: Icons.replay_rounded,
-                  label: 'На початок',
+                  label: Homework14Texts.videoRestart,
                   onPressed: _restart,
                 ),
               ],
@@ -147,7 +158,7 @@ class _HomeworkVideoCardState extends State<HomeworkVideoCard> {
             SwitchListTile.adaptive(
               contentPadding: EdgeInsets.zero,
               title: Text(
-                'Підсвітити відео через ColorFiltered',
+                Homework14Texts.videoFilterLabel,
                 style: Homework14TextStyles.body,
               ),
               value: _isFilterEnabled,
@@ -180,12 +191,19 @@ class _ControlButton extends StatelessWidget {
       color: isActive
           ? colorScheme.primary
           : colorScheme.primary.withValues(alpha: 0.12),
-      borderRadius: BorderRadius.circular(26),
+      borderRadius: BorderRadius.circular(
+        Homework14Dimensions.buttonBorderRadius,
+      ),
       child: InkWell(
-        borderRadius: BorderRadius.circular(26),
+        borderRadius: BorderRadius.circular(
+          Homework14Dimensions.buttonBorderRadius,
+        ),
         onTap: onPressed,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+          padding: const EdgeInsets.symmetric(
+            horizontal: Homework14Dimensions.buttonPaddingHorizontal,
+            vertical: Homework14Dimensions.buttonPaddingVertical,
+          ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [

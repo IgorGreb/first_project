@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_grebenyuk/homeworks/home_work_14/constants/app_constants.dart';
 import 'package:flutter_application_grebenyuk/homeworks/home_work_14/constants/app_styles.dart';
 import 'package:just_audio/just_audio.dart';
 
@@ -29,7 +30,7 @@ class _HomeworkAudioCardState extends State<HomeworkAudioCard> {
       await _audioPlayer.setVolume(_volume);
       await _audioPlayer.setLoopMode(LoopMode.one);
     } catch (error) {
-      setState(() => _error = 'Не вдалося завантажити аудіо: $error');
+      setState(() => _error = '${Homework14Texts.audioErrorPrefix}$error');
     }
     setState(() {});
   }
@@ -72,50 +73,59 @@ class _HomeworkAudioCardState extends State<HomeworkAudioCard> {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Card(
       elevation: 0,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(
+          Homework14Dimensions.cardBorderRadius,
+        ),
+      ),
       child: Padding(
-        padding: const EdgeInsets.all(24),
+        padding: const EdgeInsets.all(Homework14Dimensions.cardPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Мережеве аудіо', style: Homework14TextStyles.sectionTitle),
-            const SizedBox(height: 6),
             Text(
-              'Потік із мережі відтворюється через just_audio з контролем гучності.',
+              Homework14Texts.audioCardTitle,
+              style: Homework14TextStyles.sectionTitle,
+            ),
+            const SizedBox(height: Homework14Dimensions.tinySpacing),
+            Text(
+              Homework14Texts.audioCardDescription,
               style: Homework14TextStyles.body,
             ),
             if (_error != null) ...[
-              const SizedBox(height: 12),
+              const SizedBox(height: Homework14Dimensions.sliderSpacing),
               Text(
                 _error!,
                 style: Homework14TextStyles.body
                     .copyWith(color: colorScheme.error),
               ),
             ],
-            const SizedBox(height: 20),
+            const SizedBox(height: Homework14Dimensions.infoSpacing),
             _AudioProgress(player: _audioPlayer),
-            const SizedBox(height: 12),
+            const SizedBox(height: Homework14Dimensions.sliderSpacing),
             Wrap(
-              spacing: 12,
-              runSpacing: 12,
+              spacing: Homework14Dimensions.wrapSpacing,
+              runSpacing: Homework14Dimensions.wrapSpacing,
               children: [
                 _AudioButton(
                   icon: _audioPlayer.playing
                       ? Icons.pause_rounded
                       : Icons.play_arrow_rounded,
-                  label: _audioPlayer.playing ? 'Пауза' : 'Відтворити',
+                  label: _audioPlayer.playing
+                      ? Homework14Texts.audioPause
+                      : Homework14Texts.audioPlay,
                   onPressed: _togglePlay,
                 ),
                 _AudioButton(
                   icon: Icons.stop_rounded,
-                  label: 'На початок',
+                  label: Homework14Texts.audioRestart,
                   onPressed: () => _seekTo(0),
                 ),
               ],
             ),
-            const SizedBox(height: 22),
+            const SizedBox(height: Homework14Dimensions.audioBlockSpacing),
             Text(
-              'Гучність — ${(_volume * 100).round()}%',
+              '${Homework14Texts.audioVolumePrefix}${(_volume * 100).round()}%',
               style: Homework14TextStyles.body,
             ),
             Slider(
@@ -128,11 +138,11 @@ class _HomeworkAudioCardState extends State<HomeworkAudioCard> {
             SwitchListTile.adaptive(
               contentPadding: EdgeInsets.zero,
               title: Text(
-                'Циклічне повторення',
+                Homework14Texts.audioLoopTitle,
                 style: Homework14TextStyles.body,
               ),
               subtitle: Text(
-                'Після завершення трек починається знову',
+                Homework14Texts.audioLoopSubtitle,
                 style: Homework14TextStyles.caption,
               ),
               value: _isLoopEnabled,
@@ -161,12 +171,19 @@ class _AudioButton extends StatelessWidget {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Material(
       color: colorScheme.secondary.withValues(alpha: 0.12),
-      borderRadius: BorderRadius.circular(26),
+      borderRadius: BorderRadius.circular(
+        Homework14Dimensions.buttonBorderRadius,
+      ),
       child: InkWell(
-        borderRadius: BorderRadius.circular(26),
+        borderRadius: BorderRadius.circular(
+          Homework14Dimensions.buttonBorderRadius,
+        ),
         onTap: onPressed,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+          padding: const EdgeInsets.symmetric(
+            horizontal: Homework14Dimensions.buttonPaddingHorizontal,
+            vertical: Homework14Dimensions.buttonPaddingVertical,
+          ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
